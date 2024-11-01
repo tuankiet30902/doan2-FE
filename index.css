@@ -1,22 +1,66 @@
-header {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    background-color: #f8f9fa;
-    z-index: 1000;
-}
-
-nav {
+#sidebar {
+    height: 100vh;
     position: fixed;
     left: 0;
-    top: 50px; /* Đặt dưới header nếu cần */
-    height: 100%;
-    width: 200px; /* Đặt kích thước mong muốn */
-    background-color: #e9ecef;
-    z-index: 1000;
+    top: 0;
+    width: 250px;
+    background-color: #343a40;
+    color: #fff;
+    transition: transform 0.3s ease;
+}
+#sidebar .nav-link {
+    color: #ddd;
+}
+#sidebar .nav-link.active {
+    background-color: #495057;
+    color: #fff;
+}
+#sidebar .nav-link:hover {
+    color: #fff;
+    background-color: #495057;
+}
+#sidebar.collapsed {
+    transform: translateX(-100%);
+}
+.main-content {
+    margin-left: 250px;
+    padding: 20px;
+    transition: margin-left 0.3s ease;
+}
+.main-content.collapsed {
+    margin-left: 0;
+}
+.navbar-custom {
+    background-color: #007bff;
+    color: #fff;
+}
+.navbar-custom .navbar-brand,
+.navbar-custom .navbar-nav .nav-link {
+    color: #fff;
+}
+.direction-item {
+    padding: 10px 20px;
+    cursor: pointer;
+    color: #c9c6c6;
+    border-radius: 4px;
+    font-size: 16px;
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-#content {
-    margin-left: 200px; /* Đẩy nội dung sang bên phải, tương ứng với chiều rộng menu */
-    padding-top: 60px; /* Đẩy nội dung xuống, tương ứng với chiều cao của header */
+.direction-item i {
+    margin-right: 8px;
+}
+
+/* Active Tab Styling */
+.direction-item.active {
+    color: #575454;
+    background-color: #007bff;
+    box-shadow: 0px 4px 8px rgba(0, 123, 255, 0.2);
+}
+
+.direction-item:hover {
+    background-color: #e0e0e0;
 }
