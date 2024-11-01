@@ -31,4 +31,9 @@ app.controller('task_controller', function() {
     ctrl.checkPermission = function(permission) {
         return true;
     };
+
+    ctrl.taskDetail = function(id){
+        link = '/public/modules/office/task/details/views/details.html';
+        window.location.href = link;
+    }
 });
