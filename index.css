@@ -1,0 +1,22 @@
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #f8f9fa;
+    z-index: 1000;
+}
+
+nav {
+    position: fixed;
+    left: 0;
+    top: 50px; /* Đặt dưới header nếu cần */
+    height: 100%;
+    width: 200px; /* Đặt kích thước mong muốn */
+    background-color: #e9ecef;
+    z-index: 1000;
+}
+
+#content {
+    margin-left: 200px; /* Đẩy nội dung sang bên phải, tương ứng với chiều rộng menu */
+    padding-top: 60px; /* Đẩy nội dung xuống, tương ứng với chiều cao của header */
+}
