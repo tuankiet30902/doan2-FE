@@ -27,16 +27,6 @@ class Server{
     }
 
     start(){
-        //const https = require('https');
-        //const hostname = setting.hostname;
-        //const options = {
-        //    ca: fs.readFileSync('./SSL/devspo.com/ca_bundle.crt'),
-        //    key: fs.readFileSync('./SSL/devspo.com/private.key'),
-        //    cert: fs.readFileSync('./SSL/devspo.com/certificate.crt')
-        //};
-        //var server = https.createServer(options, app).listen(port, hostname, function () {
-        //    logger.info("Server is listening port " + port);
-        //});
         const http = httpModule.Server(app);
         var server = http.listen(setting.port, setting.hostname, function () {
             LogProvider.info("Server is listening port " + setting.port,
@@ -48,7 +38,7 @@ class Server{
         server.setTimeout(3000);
         process.on('uncaughtException', err => {
             console.error('There was an uncaught error', err)
-            process.exit(1) //mandatory (as per the Node.js docs)
+            process.exit(1)
           })
     }
 
@@ -58,7 +48,6 @@ class Server{
     }
 
     initExpressMiddleware(){
-        // app.use(log('dev'));
         app.use(cors());
         app.use(bodyParser.json({ limit: '10mb' }));
         app.use(bodyParser.urlencoded({ limit: '10mb', extended: true }));
@@ -67,7 +56,6 @@ class Server{
 
     setRender(){
         app.use(function(req, res) {
-            // Use res.sendfile, as it streams instead of reading the file into memory.
             let domain = req.protocol + '://' + req.headers.host;
             res.render('home', { host: domain });
         });

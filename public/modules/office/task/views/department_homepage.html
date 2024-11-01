@@ -1,2 +1,169 @@
-<h2>Phòng Ban</h2>
-<p>This is the Department page.</p>
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        background-color: #f4f4f4;
+    }
+    .header input, .header select, .header button {
+        margin-right: 20px;
+        padding: 8px;
+        font-size: 14px;
+    }
+    .card-container {
+        margin-top: 50px;
+        display: flex;
+        flex-wrap: wrap; /* Thêm thuộc tính này để cho phép xuống dòng */
+        gap: 20px;
+    }
+    .container {
+        max-width: fit-content;
+        padding: 20px;
+        width: 100%;
+        height: 100%;
+        background-color: white;
+        border-radius: 10px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    .container:hover {
+        box-shadow: 0 8px 8px rgba(0, 0, 0, 0.2);
+        transition: all 0.2s ease-in-out;
+        background: #ebebeb;
+    }
+    .container h3 {
+        padding: 10px;
+        margin: 0;
+        font-size: 16px;
+        margin-bottom: 10px;
+        font-weight: 700;
+        color: #a8a8a8;
+    }
+    .container .icon {
+        float: right;
+        width: 50px;
+        height: 50px;
+    }
+    .container p {
+        font-size: 14px;
+        margin: 5px 0;
+    }
+    .status-indicators {
+        display: flex;
+        gap: 10px;
+        margin-top: 10px;
+    }
+    .status-indicators .status {
+        display: flex;
+        align-items: center;
+        font-size: 14px;
+    }
+    .status-indicators .status span {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        margin-right: 5px; 
+    }
+    .overdue { background-color: red; }
+    .upcoming { background-color: orange; }
+    .ongoing { background-color: blue; }
+    .content{
+        width: 100%;
+    }
+    .content button{
+        width: 150px;
+        color: #3b7fce;
+        padding: 10px;
+        font-size: 12px;
+        border-radius: 5px;
+        border: 2px solid #3b7fce
+    }
+    .content button:hover{
+        color: #d9dadf;
+        background-color: #3856da;
+        transition: all 0.5s;
+    }
+    .content input{
+        width: 900px;
+        height: 40px;
+        border: 2px solid #bbbbbb;
+        border-radius: 5px;
+        padding: 10px;
+    }
+</style>
+    <div class="content">
+        <div style="float: left;padding-right: 50px;"><button>+ THÊM CÔNG VIỆC</button>  </div>
+        <input type="text" placeholder="Tìm theo tên">
+    </div>
+
+<div class="card-container">
+    <div ng-click="ctrl.taskDetail(1)" class="container">
+        <h3>Ban giám hiệu</h3>
+        <p>👤 3 Nhân viên</p>
+        <p>Công việc hiện tại: 0</p>
+        <p>Công việc hoàn thành: 0</p>
+        <div class="status-indicators">
+            <div class="status"><span class="overdue"></span> 0 Quá hạn</div>
+            <div class="status"><span class="upcoming"></span> 0 Sắp trễ hạn</div>
+            <div class="status"><span class="ongoing"></span> Còn hạn</div>
+        </div>
+    </div>
+
+    <div ng-click="ctrl.taskDetail(2)" class="container">
+        <h3>Khoa Dược</h3>
+        <p>👤 2 Nhân viên</p>
+        <p>Công việc hiện tại: 0</p>
+        <p>Công việc hoàn thành: 0</p>
+        <div class="status-indicators">
+            <div class="status"><span class="overdue"></span> 0 Quá hạn</div>
+            <div class="status"><span class="upcoming"></span> 0 Sắp trễ hạn</div>
+            <div class="status"><span class="ongoing"></span> Còn hạn</div>
+        </div>
+    </div>
+
+    <div class="container">
+        <h3>Khoa Răng Hàm Mặt</h3>
+        <p>👤 1 Nhân viên</p>
+        <p>Công việc hiện tại: 0</p>
+        <p>Công việc hoàn thành: 0</p>
+        <div class="status-indicators">
+            <div class="status"><span class="overdue"></span> 0 Quá hạn</div>
+            <div class="status"><span class="upcoming"></span> 0 Sắp trễ hạn</div>
+            <div class="status"><span class="ongoing"></span> Còn hạn</div>
+        </div>
+    </div>
+    <div class="container">
+        <h3>Khoa Răng Hàm Mặt</h3>
+        <p>👤 1 Nhân viên</p>
+        <p>Công việc hiện tại: 0</p>
+        <p>Công việc hoàn thành: 0</p>
+        <div class="status-indicators">
+            <div class="status"><span class="overdue"></span> 0 Quá hạn</div>
+            <div class="status"><span class="upcoming"></span> 0 Sắp trễ hạn</div>
+            <div class="status"><span class="ongoing"></span> Còn hạn</div>
+        </div>
+    </div>
+    <div class="container">
+        <h3>Khoa Răng Hàm Mặt</h3>
+        <p>👤 1 Nhân viên</p>
+        <p>Công việc hiện tại: 0</p>
+        <p>Công việc hoàn thành: 0</p>
+        <div class="status-indicators">
+            <div class="status"><span class="overdue"></span> 0 Quá hạn</div>
+            <div class="status"><span class="upcoming"></span> 0 Sắp trễ hạn</div>
+            <div class="status"><span class="ongoing"></span> Còn hạn</div>
+        </div>
+    </div>
+    <div class="container">
+        <h3>Khoa Răng Hàm Mặt</h3>
+        <p>👤 1 Nhân viên</p>
+        <p>Công việc hiện tại: 0</p>
+        <p>Công việc hoàn thành: 0</p>
+        <div class="status-indicators">
+            <div class="status"><span class="overdue"></span> 0 Quá hạn</div>
+            <div class="status"><span class="upcoming"></span> 0 Sắp trễ hạn</div>
+            <div class="status"><span class="ongoing"></span> Còn hạn</div>
+        </div>
+    </div>
+</div>
+<script src="../controller.js"></script>
+
